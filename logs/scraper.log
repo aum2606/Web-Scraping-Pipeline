@@ -1,0 +1,168 @@
+2025-04-02 21:37:24 - root - INFO - Logging configured with level INFO
+2025-04-02 21:37:24 - __main__ - INFO - This is an INFO message
+2025-04-02 21:37:25 - __main__ - WARNING - This is a WARNING message
+2025-04-02 21:37:25 - __main__ - ERROR - This is an ERROR message
+2025-04-02 21:37:25 - __main__ - CRITICAL - This is a CRITICAL message
+2025-04-02 22:21:20 - root - INFO - Logging configured with level INFO
+2025-04-02 22:21:20 - database.connection - INFO - Created new database engine for localhost:5432
+2025-04-02 22:29:00 - root - INFO - Logging configured with level INFO
+2025-04-02 22:29:00 - database.connection - INFO - Created new database engine for localhost:5432
+2025-04-02 22:29:32 - root - INFO - Logging configured with level INFO
+2025-04-02 22:29:32 - database.connection - INFO - Created new database engine for localhost:5432
+2025-04-02 22:31:03 - root - INFO - Logging configured with level INFO
+2025-04-02 22:31:03 - src.database.connection - INFO - Created new database engine for localhost:5432
+2025-04-02 22:31:03 - __main__ - ERROR - Failed to initialize database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "scraper_db" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-04-02 22:31:03 - __main__ - WARNING - Running in DB-less mode. Data will not be persisted.
+2025-04-02 22:31:03 - __main__ - INFO - Scraper application initialized
+2025-04-02 22:31:03 - __main__ - INFO - Starting scraper application
+2025-04-02 22:31:03 - __main__ - INFO - Starting stock scraper run
+2025-04-02 22:31:03 - scrapers.base_scraper - INFO - Starting StockScraper scraper
+2025-04-02 22:31:03 - src.scrapers.stock_scraper - INFO - Scraping stock data from https://finance.yahoo.com/quote/AAPL
+2025-04-02 22:31:08 - src.scrapers.stock_scraper - INFO - Successfully scraped stock data from https://finance.yahoo.com/quote/AAPL
+2025-04-02 22:31:08 - src.scrapers.stock_scraper - INFO - Scraping stock data from https://finance.yahoo.com/quote/MSFT
+2025-04-02 22:31:12 - src.scrapers.stock_scraper - INFO - Successfully scraped stock data from https://finance.yahoo.com/quote/MSFT
+2025-04-02 22:31:12 - src.scrapers.stock_scraper - INFO - Scraping stock data from https://finance.yahoo.com/quote/GOOGL
+2025-04-02 22:31:18 - src.scrapers.stock_scraper - INFO - Successfully scraped stock data from https://finance.yahoo.com/quote/GOOGL
+2025-04-02 22:31:18 - scrapers.base_scraper - INFO - Completed StockScraper scraper with 3 results and 0 errors
+2025-04-02 22:31:18 - __main__ - INFO - Scraped 3 stock records (not saved to database)
+2025-04-02 22:31:18 - __main__ - INFO - Sample data: AAPL - $5680.27 (Change: 47.2)
+2025-04-02 22:31:18 - __main__ - INFO - Sample data: MSFT - $5680.3 (Change: 47.23)
+2025-04-02 22:31:18 - __main__ - INFO - Sample data: GOOGL - $5680.78 (Change: 47.71)
+2025-04-02 22:31:18 - __main__ - INFO - Completed stock scraper run
+2025-04-02 22:31:18 - __main__ - INFO - Starting weather scraper run
+2025-04-02 22:31:18 - scrapers.base_scraper - INFO - Starting WeatherScraper scraper
+2025-04-02 22:31:18 - src.scrapers.weather_scraper - INFO - Scrapping weather data for New York
+2025-04-02 22:31:21 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for New York
+2025-04-02 22:31:21 - src.scrapers.weather_scraper - INFO - Scrapping weather data for Los Angeles
+2025-04-02 22:31:23 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for Los Angeles
+2025-04-02 22:31:23 - src.scrapers.weather_scraper - INFO - Scrapping weather data for Chicago
+2025-04-02 22:31:25 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for Chicago
+2025-04-02 22:31:25 - src.scrapers.weather_scraper - INFO - Scrapping weather data for Houston
+2025-04-02 22:31:29 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for Houston
+2025-04-02 22:31:29 - src.scrapers.weather_scraper - INFO - Scrapping weather data for Phoenix
+2025-04-02 22:31:33 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for Phoenix
+2025-04-02 22:31:33 - scrapers.base_scraper - INFO - Completed WeatherScraper scraper with 5 results and 0 errors
+2025-04-02 22:31:33 - __main__ - INFO - Scraped 5 weather records (not saved to database)
+2025-04-02 22:31:33 - __main__ - INFO - Sample data: New York - 9.84°C, Clouds
+2025-04-02 22:31:33 - __main__ - INFO - Sample data: Los Angeles - 12.33°C, Clear
+2025-04-02 22:31:33 - __main__ - INFO - Sample data: Chicago - 8.63°C, Rain
+2025-04-02 22:31:33 - __main__ - INFO - ... and 2 more records
+2025-04-02 22:31:33 - __main__ - INFO - Completed weather scraper run
+2025-04-02 22:31:33 - __main__ - INFO - Scheduled stock scraper to run every 60 minutes
+2025-04-02 22:31:33 - __main__ - INFO - Scheduled weather scraper to run every 120 minutes
+2025-04-02 22:31:33 - __main__ - INFO - Entering scheduler loop
+2025-04-02 22:31:45 - root - INFO - Logging configured with level INFO
+2025-04-02 22:31:45 - src.database.connection - INFO - Created new database engine for localhost:5432
+2025-04-02 22:31:45 - __main__ - ERROR - Failed to initialize database: (psycopg2.OperationalError) connection to server at "localhost" (::1), port 5432 failed: FATAL:  database "scraper_db" does not exist
+
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2025-04-02 22:31:45 - __main__ - WARNING - Running in DB-less mode. Data will not be persisted.
+2025-04-02 22:31:45 - __main__ - INFO - Scraper application initialized
+2025-04-02 22:31:45 - __main__ - INFO - Starting scraper application
+2025-04-02 22:31:45 - __main__ - INFO - Starting stock scraper run
+2025-04-02 22:31:45 - scrapers.base_scraper - INFO - Starting StockScraper scraper
+2025-04-02 22:31:45 - src.scrapers.stock_scraper - INFO - Scraping stock data from https://finance.yahoo.com/quote/AAPL
+2025-04-02 22:31:55 - src.scrapers.stock_scraper - INFO - Successfully scraped stock data from https://finance.yahoo.com/quote/AAPL
+2025-04-02 22:31:55 - src.scrapers.stock_scraper - INFO - Scraping stock data from https://finance.yahoo.com/quote/MSFT
+2025-04-02 22:31:57 - src.scrapers.stock_scraper - INFO - Successfully scraped stock data from https://finance.yahoo.com/quote/MSFT
+2025-04-02 22:31:57 - src.scrapers.stock_scraper - INFO - Scraping stock data from https://finance.yahoo.com/quote/GOOGL
+2025-04-02 22:31:58 - __main__ - INFO - Scraper application stopped by user
+2025-04-02 22:31:58 - __main__ - INFO - All resources cleaned up
+2025-04-02 22:31:58 - __main__ - INFO - Scraper application shutdown complete
+2025-04-02 22:31:58 - __main__ - INFO - All resources cleaned up
+2025-04-02 22:41:59 - root - INFO - Logging configured with level INFO
+2025-04-02 22:41:59 - src.database.connection - INFO - Created new database engine for localhost:5432
+2025-04-02 22:42:00 - src.main - INFO - Database connection established successfully
+2025-04-02 22:42:00 - src.main - INFO - Scraper application initialized
+2025-04-02 22:42:00 - src.main - INFO - Starting scraper application
+2025-04-02 22:42:00 - src.main - INFO - Starting stock scraper run
+2025-04-02 22:42:00 - src.scrapers.base_scraper - INFO - Starting StockScraper scraper
+2025-04-02 22:42:00 - src.scrapers.stock_scraper - INFO - Scraping stock data from https://finance.yahoo.com/quote/AAPL
+2025-04-02 22:42:06 - src.scrapers.stock_scraper - INFO - Successfully scraped stock data from https://finance.yahoo.com/quote/AAPL
+2025-04-02 22:42:06 - src.scrapers.stock_scraper - INFO - Scraping stock data from https://finance.yahoo.com/quote/MSFT
+2025-04-02 22:42:12 - src.scrapers.stock_scraper - INFO - Successfully scraped stock data from https://finance.yahoo.com/quote/MSFT
+2025-04-02 22:42:12 - src.scrapers.stock_scraper - INFO - Scraping stock data from https://finance.yahoo.com/quote/GOOGL
+2025-04-02 22:42:14 - src.scrapers.stock_scraper - INFO - Successfully scraped stock data from https://finance.yahoo.com/quote/GOOGL
+2025-04-02 22:42:14 - src.scrapers.base_scraper - INFO - Completed StockScraper scraper with 3 results and 0 errors
+2025-04-02 22:42:14 - src.main - ERROR - Error running stock scraper: 'NoneType' object is not callable
+Traceback (most recent call last):
+  File "D:\coding\python\scrapper\src\main.py", line 95, in run_stock_scraper
+    self.storage_manager.log_scraper_run(
+  File "D:\coding\python\scrapper\src\database\storage_manager.py", line 147, in log_scraper_run
+    session = Session()
+TypeError: 'NoneType' object is not callable
+2025-04-02 22:42:14 - src.main - INFO - Starting weather scraper run
+2025-04-02 22:42:14 - src.scrapers.base_scraper - INFO - Starting WeatherScraper scraper
+2025-04-02 22:42:14 - src.scrapers.weather_scraper - INFO - Scrapping weather data for New York
+2025-04-02 22:42:19 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for New York
+2025-04-02 22:42:19 - src.scrapers.weather_scraper - INFO - Scrapping weather data for Los Angeles
+2025-04-02 22:42:23 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for Los Angeles
+2025-04-02 22:42:23 - src.scrapers.weather_scraper - INFO - Scrapping weather data for Chicago
+2025-04-02 22:42:25 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for Chicago
+2025-04-02 22:42:25 - src.scrapers.weather_scraper - INFO - Scrapping weather data for Houston
+2025-04-02 22:42:27 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for Houston
+2025-04-02 22:42:27 - src.scrapers.weather_scraper - INFO - Scrapping weather data for Phoenix
+2025-04-02 22:42:29 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for Phoenix
+2025-04-02 22:42:29 - src.scrapers.base_scraper - INFO - Completed WeatherScraper scraper with 5 results and 0 errors
+2025-04-02 22:42:29 - src.main - ERROR - Error running weather scraper: 'NoneType' object is not callable
+Traceback (most recent call last):
+  File "D:\coding\python\scrapper\src\main.py", line 149, in run_weather_scraper
+    self.storage_manager.log_scraper_run(
+  File "D:\coding\python\scrapper\src\database\storage_manager.py", line 147, in log_scraper_run
+    session = Session()
+TypeError: 'NoneType' object is not callable
+2025-04-02 22:42:29 - src.main - INFO - Scheduled stock scraper to run every 60 minutes
+2025-04-02 22:42:29 - src.main - INFO - Scheduled weather scraper to run every 120 minutes
+2025-04-02 22:42:29 - src.main - INFO - Entering scheduler loop
+2025-04-02 22:43:03 - src.main - INFO - Scraper application stopped by user
+2025-04-02 22:43:03 - src.database.connection - INFO - Database engine closed and all connections disposed
+2025-04-02 22:43:03 - src.main - INFO - Database resources cleaned up
+2025-04-02 22:43:03 - src.main - INFO - All resources cleaned up
+2025-04-02 22:43:03 - src.main - INFO - Scraper application shutdown complete
+2025-04-02 22:45:55 - root - INFO - Logging configured with level INFO
+2025-04-02 22:45:56 - src.database.connection - INFO - Created new database engine for localhost:5432
+2025-04-02 22:45:56 - src.main - ERROR - Failed to test storage manager: 'NoneType' object is not callable
+2025-04-02 22:45:56 - src.main - WARNING - Database connection succeeded but storage manager test failed
+2025-04-02 22:45:56 - src.main - INFO - Scraper application initialized
+2025-04-02 22:45:56 - src.main - INFO - Starting scraper application
+2025-04-02 22:45:56 - src.main - INFO - Starting stock scraper run
+2025-04-02 22:45:56 - src.scrapers.base_scraper - INFO - Starting StockScraper scraper
+2025-04-02 22:45:56 - src.scrapers.stock_scraper - INFO - Scraping stock data from https://finance.yahoo.com/quote/AAPL
+2025-04-02 22:46:03 - src.scrapers.stock_scraper - INFO - Successfully scraped stock data from https://finance.yahoo.com/quote/AAPL
+2025-04-02 22:46:03 - src.scrapers.stock_scraper - INFO - Scraping stock data from https://finance.yahoo.com/quote/MSFT
+2025-04-02 22:46:07 - src.scrapers.stock_scraper - INFO - Successfully scraped stock data from https://finance.yahoo.com/quote/MSFT
+2025-04-02 22:46:07 - src.scrapers.stock_scraper - INFO - Scraping stock data from https://finance.yahoo.com/quote/GOOGL
+2025-04-02 22:46:13 - src.scrapers.stock_scraper - INFO - Successfully scraped stock data from https://finance.yahoo.com/quote/GOOGL
+2025-04-02 22:46:13 - src.scrapers.base_scraper - INFO - Completed StockScraper scraper with 3 results and 0 errors
+2025-04-02 22:46:13 - src.main - INFO - Scraped 3 stock records (not saved to database)
+2025-04-02 22:46:13 - src.main - INFO - Sample data: AAPL - $5688.79 (Change: 55.72)
+2025-04-02 22:46:13 - src.main - INFO - Sample data: MSFT - $5689.06 (Change: 55.99)
+2025-04-02 22:46:13 - src.main - INFO - Sample data: GOOGL - $5689.52 (Change: 56.45)
+2025-04-02 22:46:13 - src.main - INFO - Completed stock scraper run
+2025-04-02 22:46:13 - src.main - INFO - Starting weather scraper run
+2025-04-02 22:46:13 - src.scrapers.base_scraper - INFO - Starting WeatherScraper scraper
+2025-04-02 22:46:13 - src.scrapers.weather_scraper - INFO - Scrapping weather data for New York
+2025-04-02 22:46:15 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for New York
+2025-04-02 22:46:15 - src.scrapers.weather_scraper - INFO - Scrapping weather data for Los Angeles
+2025-04-02 22:46:19 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for Los Angeles
+2025-04-02 22:46:19 - src.scrapers.weather_scraper - INFO - Scrapping weather data for Chicago
+2025-04-02 22:46:23 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for Chicago
+2025-04-02 22:46:23 - src.scrapers.weather_scraper - INFO - Scrapping weather data for Houston
+2025-04-02 22:46:27 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for Houston
+2025-04-02 22:46:27 - src.scrapers.weather_scraper - INFO - Scrapping weather data for Phoenix
+2025-04-02 22:46:31 - src.scrapers.weather_scraper - INFO - Successfully scraped weather data for Phoenix
+2025-04-02 22:46:31 - src.scrapers.base_scraper - INFO - Completed WeatherScraper scraper with 5 results and 0 errors
+2025-04-02 22:46:31 - src.main - INFO - Scraped 5 weather records (not saved to database)
+2025-04-02 22:46:31 - src.main - INFO - Sample data: New York - 10.77°C, Clouds
+2025-04-02 22:46:31 - src.main - INFO - Sample data: Los Angeles - 12.72°C, Clear
+2025-04-02 22:46:31 - src.main - INFO - Sample data: Chicago - 8.78°C, Rain
+2025-04-02 22:46:31 - src.main - INFO - ... and 2 more records
+2025-04-02 22:46:31 - src.main - INFO - Completed weather scraper run
+2025-04-02 22:46:31 - src.main - INFO - Scheduled stock scraper to run every 60 minutes
+2025-04-02 22:46:31 - src.main - INFO - Scheduled weather scraper to run every 120 minutes
+2025-04-02 22:46:31 - src.main - INFO - Entering scheduler loop
+2025-04-02 22:46:36 - src.main - INFO - Scraper application stopped by user
+2025-04-02 22:46:36 - src.main - INFO - All resources cleaned up
+2025-04-02 22:46:36 - src.main - INFO - Scraper application shutdown complete

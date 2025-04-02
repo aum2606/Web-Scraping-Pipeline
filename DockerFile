@@ -1,0 +1,30 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    gcc \
+    python3-dev \
+    libpq-dev \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements first for better caching
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy the rest of the application
+COPY . .
+
+# Create log directory
+RUN mkdir -p logs
+
+# Run as non-root user for better security
+RUN groupadd -r scraper && useradd -r -g scraper scraper
+RUN chown -R scraper:scraper /app
+USER scraper
+
+# Command to run the application
+CMD ["python", "-m", "src.main"]

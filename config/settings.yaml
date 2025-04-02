@@ -1,0 +1,55 @@
+# Scraping Configuration
+
+# Stock Data Configuration
+stock_scraper:
+  urls:
+    - https://finance.yahoo.com/quote/AAPL
+    - https://finance.yahoo.com/quote/MSFT
+    - https://finance.yahoo.com/quote/GOOGL
+  interval_seconds: 3600  # Scrape every hour
+  selectors:
+    price: "fin-streamer[data-field='regularMarketPrice']"
+    change: "fin-streamer[data-field='regularMarketChange']"
+    change_percent: "fin-streamer[data-field='regularMarketChangePercent']"
+    volume: "fin-streamer[data-field='regularMarketVolume']"
+  headers:
+    User-Agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
+
+# Weather Data Configuration
+weather_scraper:
+  base_url: "https://api.openweathermap.org/data/2.5/weather"
+  api_key: "ca27add26ea1d73943098e62635feb71"
+  cities:
+    - name: "New York"
+      id: 5128581
+    - name: "Los Angeles"
+      id: 5368361
+    - name: "Chicago"
+      id: 4887398
+    - name: "Houston"
+      id: 4699066
+    - name: "Phoenix"
+      id: 5308655
+  interval_seconds: 7200  # Scrape every 2 hours
+  params:
+    units: "metric"
+
+# Database Configuration
+database:
+  type: "postgresql"
+  host: "localhost"
+  port: 5432
+  name: "scraper_db"
+  user: "postgres"
+  password: "143aum"
+  batch_size: 100  # Number of records to insert at once
+  retry_attempts: 3
+  retry_delay_seconds: 5
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  date_format: "%Y-%m-%d %H:%M:%S"
+  file_rotation: "midnight"
+  backup_count: 7

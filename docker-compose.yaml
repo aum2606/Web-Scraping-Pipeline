@@ -1,0 +1,47 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:14
+    container_name: scraper_postgres
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "${DB_PORT}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+    networks:
+      - scraper_network
+
+  scraper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: web_scraper
+    volumes:
+      - .:/app
+      - ./logs:/app/logs
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - WEATHER_API_KEY=${WEATHER_API_KEY}
+      - LOG_LEVEL=${LOG_LEVEL}
+    restart: unless-stopped
+    networks:
+      - scraper_network
+    command: python -m src.main
+
+volumes:
+  postgres_data:
+
+networks:
+  scraper_network:
+    driver: bridge
