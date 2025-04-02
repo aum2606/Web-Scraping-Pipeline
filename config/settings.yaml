@@ -18,7 +18,7 @@ stock_scraper:
 # Weather Data Configuration
 weather_scraper:
   base_url: "https://api.openweathermap.org/data/2.5/weather"
-  api_key: "ca27add26ea1d73943098e62635feb71"
+  api_key: "apikey"
   cities:
     - name: "New York"
       id: 5128581
@@ -41,7 +41,7 @@ database:
   port: 5432
   name: "scraper_db"
   user: "postgres"
-  password: "143aum"
+  password: "password"
   batch_size: 100  # Number of records to insert at once
   retry_attempts: 3
   retry_delay_seconds: 5
